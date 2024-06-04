@@ -1,0 +1,21 @@
+{
+  "name": "pay-bridge",
+  "version": "1.0.0",
+  "description": "api to integrate with payment system",
+  "main": "index.js",
+  "author": "paulo-p-33",
+  "license": "MIT",
+  "scripts": {
+    "start:dev": "tsnd -r tsconfig-paths/register --env-file=.env --exit-child --transpile-only  --ignore-watch node_modules src/server.ts"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.12.13",
+    "ts-node-dev": "^2.0.0",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

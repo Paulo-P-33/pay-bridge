@@ -1,0 +1,28 @@
+services:
+  paybridge:
+    build:
+      context: config/docker/pay-bridge/
+      dockerfile: Dockerfile.dev
+    container_name: pay-bridge-container
+    ports:
+      - 3333:3333
+    volumes:
+      - .:/home/node/app
+    networks:
+      - user-network
+    command: sh -c "yarn install && yarn start:dev"
+  paybridgedb:
+    build: 
+      context: config/docker/postgres
+      dockerfile: Dockerfile.dev
+    container_name: pay-bridge-db-container
+    ports: 
+      - 6452:5432
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: pay-bridge-db
+      POSTGRES_PASSWORD: pay-bridge-db
+      POSTGRES_DB: pay-bridge-db
+networks:
+  user-network:
+    driver: bridge
