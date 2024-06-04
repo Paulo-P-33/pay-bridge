@@ -1,3 +1,3 @@
-import { createMainServer } from './main'
+import { createMainServer } from './main';
 
-createMainServer()
+createMainServer();
