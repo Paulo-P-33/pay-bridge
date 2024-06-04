@@ -1,4 +1,12 @@
-prepare-commit-msg:
+pre-commit:
+  parallel: true  # All commands will be executed concurrently
+  commands:      
+    ts-lint:
+      glob: "*.{js,ts}"
+      run: npx eslint --fix {staged_files} && git add {staged_files}
+
+
+commit-msg:
   commands:
     commitlint: 
       run: yarn commitlint --edit {1}

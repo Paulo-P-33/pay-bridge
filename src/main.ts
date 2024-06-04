@@ -1,9 +1,9 @@
-import express, {NextFunction} from 'express'
-import {IncomingMessage,Server, ServerResponse} from 'http'
+import express, {NextFunction} from 'express';
+import {IncomingMessage,Server, ServerResponse} from 'http';
 
 
 export const createMainServer = async (): Promise<Server<typeof IncomingMessage, typeof ServerResponse>> => {
-  const app = express()
+  const app = express();
   app.use(
     (
       err: any,
@@ -18,7 +18,6 @@ export const createMainServer = async (): Promise<Server<typeof IncomingMessage,
       });
     },
   );
-
-  return app.listen(3333, () => console.log('Server is running!'))
-
-}
+  
+  return app.listen(3333, () => console.log('Server is running!'));
+};
