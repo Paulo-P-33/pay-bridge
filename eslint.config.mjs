@@ -32,50 +32,6 @@ export default [
       '@typescript-eslint/semi': ['error', 'always'],
       '@typescript-eslint/no-empty-interface': 'off',
       '@typescript-eslint/ban-ts-comment': 'off',
-      // 'padding-line-between-statements': [
-      //   'error',
-      //   {
-      //     'blankLine': 'always',
-      //     'prev': '*',
-      //     'next': 'return',
-      //   },
-      //   {
-      //     'blankLine': 'always',
-      //     'prev': '*',
-      //     'next': 'throw',
-      //   },
-      //   {
-      //     'blankLine': 'always',
-      //     'prev': [
-      //       'const',
-      //       'let',
-      //       'var',
-      //     ],
-      //     'next': '*',
-      //   },
-      //   {
-      //     'blankLine': 'always',
-      //     'prev': '*',
-      //     'next': [
-      //       'const',
-      //       'let',
-      //       'var',
-      //     ],
-      //   },
-      //   {
-      //     'blankLine': 'any',
-      //     'prev': [
-      //       'const',
-      //       'let',
-      //       'var',
-      //     ],
-      //     'next': [
-      //       'const',
-      //       'let',
-      //       'var',
-      //     ],
-      //   },
-      // ],
     },
   },
 ];
