@@ -11,12 +11,17 @@ services:
     networks:
       - user-network
     command: sh -c "yarn install && yarn start:dev"
+
   paybridgedb:
-    build: 
+    build:
       context: config/docker/postgres
       dockerfile: Dockerfile.dev
+    networks:
+      - user-network
     container_name: pay-bridge-db-container
-    ports: 
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data/
+    ports:
       - 6452:5432
     restart: unless-stopped
     environment:
