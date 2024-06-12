@@ -8,7 +8,8 @@
   "scripts": {
     "start:dev": "tsnd -r tsconfig-paths/register --env-file=.env --exit-child --transpile-only  --ignore-watch node_modules src/server.ts",
     "commit": "cz",
-    "migrate:dev": "docker exec -it pay-bridge-container yarn prisma migrate dev"
+    "migrate:dev": "docker exec -it pay-bridge-container yarn prisma migrate dev",
+    "seed": "docker exec -it pay-bridge-container yarn prisma db seed"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
@@ -29,6 +30,8 @@
   },
   "dependencies": {
     "@prisma/client": "^5.15.0",
+    "@types/bcryptjs": "^2.4.6",
+    "bcryptjs": "^2.4.3",
     "env-var": "^7.5.0",
     "express": "^4.19.2",
     "prisma": "^5.15.0"
