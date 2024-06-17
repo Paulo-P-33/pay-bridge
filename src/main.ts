@@ -1,9 +1,11 @@
 import express, {NextFunction} from 'express';
 import {IncomingMessage,Server, ServerResponse} from 'http';
+import { routes } from './main.routes';
 
 
 export const createMainServer = async (): Promise<Server<typeof IncomingMessage, typeof ServerResponse>> => {
   const app = express();
+  app.use(routes);
   app.use(
     (
       err: any,
