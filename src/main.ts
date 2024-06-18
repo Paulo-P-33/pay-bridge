@@ -5,6 +5,7 @@ import { routes } from './main.routes';
 
 export const createMainServer = async (): Promise<Server<typeof IncomingMessage, typeof ServerResponse>> => {
   const app = express();
+  app.use(express.json());
   app.use(routes);
   app.use(
     (
