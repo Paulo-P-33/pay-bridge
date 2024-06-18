@@ -32,6 +32,8 @@
     "@prisma/client": "^5.15.0",
     "@types/bcryptjs": "^2.4.6",
     "bcryptjs": "^2.4.3",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
     "env-var": "^7.5.0",
     "express": "^4.19.2",
     "prisma": "^5.15.0"
