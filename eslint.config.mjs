@@ -17,7 +17,6 @@ export default [
       quotes: ['warn', 'single'],
       indent: ['error', 2, { SwitchCase: 1 }],
       'comma-dangle': ['error', 'always-multiline'],
-      'max-len': ['error', { code: 120 }],
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
       '@typescript-eslint/no-unused-vars': [
