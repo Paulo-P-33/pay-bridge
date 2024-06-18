@@ -17,6 +17,7 @@
     "@dgvalerio/eslint-config": "^1.5.9",
     "@eslint/js": "^9.4.0",
     "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.6",
     "@types/node": "^20.12.13",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
@@ -36,6 +37,7 @@
     "class-validator": "^0.14.1",
     "env-var": "^7.5.0",
     "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
     "prisma": "^5.15.0"
   },
   "config": {
