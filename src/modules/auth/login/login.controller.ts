@@ -1,6 +1,7 @@
 import { db } from '@/database/db-conn';
 import { Request, Response } from 'express';
 import bcrypt from 'bcryptjs';
+import { accessTokenGenerate } from '@/utils/functions/access-token-generator';
 
 export class LoginController {
   static async execute(req: Request, res: Response) {
@@ -31,7 +32,20 @@ export class LoginController {
       return res.status(401).json({message: 'User or password invalid!'});
     };
 
+    const token = await accessTokenGenerate(
+      {
+        userId: user.secureId, 
+        name: user.name, 
+        email: user.email, 
+        role: user.role.name,
+        userIdInPaymentSystem: user.userIdInPaymentSystem ?? undefined,
+      });
 
+    res.cookie('accessToken', token, {
+      httpOnly: true,
+      secure: process.env.SECRET_KEY_ENV === 'PROD',
+    });
+    
     return res.status(200).json({
       result: {
         id: user.secureId,
