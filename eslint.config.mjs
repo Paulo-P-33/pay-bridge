@@ -13,7 +13,6 @@ export default [
     ignores: ['./*.config.js', '!**/eslint.config.js'],
     rules: {
       ...davi.rules['padding-line-between-statements'],
-      camelcase: 'error',
       quotes: ['warn', 'single'],
       indent: ['error', 2, { SwitchCase: 1 }],
       'comma-dangle': ['error', 'always-multiline'],
