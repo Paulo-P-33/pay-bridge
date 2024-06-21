@@ -32,7 +32,7 @@ export class LoginController {
       return res.status(401).json({message: 'User or password invalid!'});
     };
 
-    const token = await accessTokenGenerate(
+    const { accessToken } = await accessTokenGenerate(
       {
         userId: user.secureId, 
         name: user.name, 
@@ -41,7 +41,7 @@ export class LoginController {
         userIdInPaymentSystem: user.userIdInPaymentSystem ?? undefined,
       });
 
-    res.cookie('accessToken', token, {
+    res.cookie('accessToken', accessToken, {
       httpOnly: true,
       secure: process.env.SECRET_KEY_ENV === 'PROD',
     });
