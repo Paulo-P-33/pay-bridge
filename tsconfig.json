@@ -12,13 +12,26 @@
     "strictPropertyInitialization": false,
     "allowJs": true,
     "sourceMap": true,
-    "rootDirs": ["./src"],
+    "rootDirs": [
+      "./src"
+    ],
     "baseUrl": "./",
     "paths": {
-      "@/*": ["./src/*"],
+      "@/*": [
+        "./src/*"
+      ],
     },
-    "typeRoots": ["./@types", "./node_modules/@types"]
+    "typeRoots": [
+      "./@types",
+      "./node_modules/@types"
+    ]
   },
-  "include": ["src", "@types", "src/utils/env"],
-  "exclude": ["node_modules"]
+  "include": [
+    "src",
+    "@types",
+    "src/utils/env"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
