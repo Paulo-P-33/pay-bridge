@@ -13,7 +13,7 @@ export async function accessTokenGenerate(
     userData,
     process.env.JWT_SECRET as string,
     {
-      expiresIn: 3600, // 1 hora - em segundos
+      expiresIn: 7200, // 1 hora - em segundos
     },
   );
 
