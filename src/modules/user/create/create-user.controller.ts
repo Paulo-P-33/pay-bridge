@@ -53,13 +53,13 @@ export class CreateUserController {
     let apiValidationErrors;
     
     const resultRequest = await fetch(`${config.baseUrlApiPagarMe}/customers`, options);
-    
-    if (resultRequest.status === 422) {
+      
+    if (resultRequest.status !== 200) {
       await resultRequest.json().then(response => {
         apiValidationErrors = {message: response.message, errors: response.errors};
       });
-      return res.status(400).json(apiValidationErrors);
-
+      
+      return res.status(resultRequest.status).json(apiValidationErrors);
     } 
     
     if (resultRequest.status === 200) {
