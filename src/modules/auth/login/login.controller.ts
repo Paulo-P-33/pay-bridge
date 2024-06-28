@@ -23,6 +23,8 @@ export class LoginController {
             secureId: true,
           },
         },
+        createdAt: true,
+        updatedAt: true,
       },
     });
 
@@ -34,7 +36,7 @@ export class LoginController {
 
     const { accessToken } = await accessTokenGenerate(
       {
-        userId: user.secureId, 
+        id: user.secureId, 
         name: user.name, 
         email: user.email, 
         role: user.role.name,
@@ -53,6 +55,8 @@ export class LoginController {
         email: user.email,
         role: user.role.name,
         roleId: user.role.secureId,
+        createdAt: user.createdAt,
+        updatedAt: user.updatedAt,
       }});
   }
 }
