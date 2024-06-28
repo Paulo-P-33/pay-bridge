@@ -8,9 +8,9 @@ export const getAuthenticatedUser = async (req: Request, res: Response, next: Ne
   const [, token] = accessToken.split('accessToken=');
   
   try {
-    const decodedUser = jwt.verify(token as string, config.jwtSecret);
+    const decodedUser = jwt.verify(token, config.jwtSecret) as Record<string, unknown>;
 
-    req.user = decodedUser as Record<string, unknown>;
+    req.user = decodedUser;
     return next();
   } catch (error) {
     return res.status(401).json({message: 'Unauthorized'});

@@ -14,7 +14,7 @@ export const getAuthenticatedAdmin = async (req: Request, res: Response, next: N
       return res.status(403).json({message: 'Request Forbidden!'});
     }
 
-    req.user = decodedUser as Record<string, unknown>;
+    req.user = decodedUser;
     return next();
   } catch (error) {
     console.log(error);
