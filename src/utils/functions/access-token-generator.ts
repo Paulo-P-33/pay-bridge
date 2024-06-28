@@ -2,7 +2,7 @@ import jwt from 'jsonwebtoken';
 
 export async function accessTokenGenerate(
   userData: {
-    userId: string,
+    id: string,
     email: string,
     name: string,
     role: string,
@@ -13,7 +13,7 @@ export async function accessTokenGenerate(
     userData,
     process.env.JWT_SECRET as string,
     {
-      expiresIn: 7200, // 1 hora - em segundos
+      expiresIn: 7200, // 2 horas - em segundos
     },
   );
 
